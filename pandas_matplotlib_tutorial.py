@@ -46,8 +46,41 @@ def task5():
     plt.grid(True)
     plt.show()
 
+# Analyze Best-Selling Games
+# Identify the top 10 best-selling games (by units sold).
+# Display the Game Title, Platform, and Units Sold (Millions) for each of the top 10 games.
+def task6():
+    top_10_games = df.nlargest(10, 'Units Sold (Millions)')[['Game Title', 'Platform', 'Units Sold (Millions)']]
+    print(top_10_games)
+
+# Scatter Plot of Revenue vs Units Sold
+# Create a scatter plot to show the relationship between Units Sold (Millions) and Revenue (Million $).
+# Add labels for the axes and a title.
+def task7():
+    df.plot(kind='scatter', x='Units Sold (Millions)', y='Revenue (Million $)', alpha=0.5) # alpha defines the opacity of the points on the graph.
+    # 1 = solid (opaque), 0 = fully transparent (invisible)
+    plt.title('Revenue vs Units Sold')
+    plt.xlabel('Units Sold (Millions)')
+    plt.ylabel('Revenue (Million $)')
+    plt.show()
+
+# Distribution of Game Releases per Year
+# Plot a histogram to show how many games were released each year.
+def task8():
+    df['Year'].plot(kind='hist', bins=14, edgecolor='black') # bins is how many "intervals" we want to group into. 
+    # Since we have a range of 14 years in our data, we want 14 separate bins to group our data by.
+    plt.title('Distribution of Game Releases per Year')
+    plt.xlabel('Year')
+    plt.ylabel('Number of Games Released')
+    plt.show()
+
+
+# Uncomment the task(s) below that you want to run
 #task1()
 #task2()
 #task3()
 #task4()
-task5()
+#task5()
+#task6()
+#task7()
+#task8()
