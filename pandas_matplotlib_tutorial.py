@@ -57,8 +57,9 @@ def task6():
 # Create a scatter plot to show the relationship between Units Sold (Millions) and Revenue (Million $).
 # Add labels for the axes and a title.
 def task7():
-    df.plot(kind='scatter', x='Units Sold (Millions)', y='Revenue (Million $)', alpha=0.5) # alpha defines the opacity of the points on the graph.
+    # alpha defines the opacity of the points on the graph.
     # 1 = solid (opaque), 0 = fully transparent (invisible)
+    df.plot(kind='scatter', x='Units Sold (Millions)', y='Revenue (Million $)', alpha=0.5) 
     plt.title('Revenue vs Units Sold')
     plt.xlabel('Units Sold (Millions)')
     plt.ylabel('Revenue (Million $)')
@@ -67,8 +68,9 @@ def task7():
 # Distribution of Game Releases per Year
 # Plot a histogram to show how many games were released each year.
 def task8():
-    df['Year'].plot(kind='hist', bins=14, edgecolor='black') # bins is how many "intervals" we want to group into. 
+    # bins is how many "intervals" we want to group into. 
     # Since we have a range of 14 years in our data, we want 14 separate bins to group our data by.
+    df['Year'].plot(kind='hist', bins=14, edgecolor='black') 
     plt.title('Distribution of Game Releases per Year')
     plt.xlabel('Year')
     plt.ylabel('Number of Games Released')
