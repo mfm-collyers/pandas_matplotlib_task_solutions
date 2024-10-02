@@ -28,11 +28,11 @@ def task3():
 # Display in a bar chart to visualise which has generated the most revenue
 def task4():
     revenue_by_genre = df.groupby('Genre')['Revenue (Million $)'].sum()
-    revenue_by_genre.plot(kind='bar')
-    plt.title('Total Revenue by Genre')
-    plt.xlabel('Genre')
-    plt.ylabel('Revenue (Million $)')
-    plt.show()
+    revenue_by_genre.plot(kind='bar') # plot our organised data
+    plt.title('Total Revenue by Genre') # Give our graph a title
+    plt.xlabel('Genre') # Label the X axis
+    plt.ylabel('Revenue (Million $)') # Label the Y axis
+    plt.show() # display our graph
 
 # Create a line plot
 # Group the data by year and caluclate total units sold each year
@@ -77,6 +77,23 @@ def task8():
     plt.show()
 
 
+# Plot a pie chart showing the distribution of games released by Genre.
+def task9():
+    # Grouping by 'Genre' and counting the number of titles in each genre
+    genre_counts = df['Genre'].value_counts() # value_counts() counts a total for each group.
+
+    # Creating a pie chart
+    plt.figure(figsize=(8, 8)) # figsize is the dimension of the chart.
+    # Keep the arguments for figsize the same if you want a perfect circle pie chart.
+    plt.pie(genre_counts, labels=genre_counts.index, autopct='%1.1f%%', startangle=90)
+    # labels=genre_counts.index: Labels the slices with the genre names.
+    # autopct='%1.1f%%': Displays the percentage for each slice.
+    # startangle=90: Rotates the pie chart to start from a different angle (90 degrees in this case).
+    plt.title('Distribution of Game Titles by Genre')
+    plt.axis('equal')  # Equal aspect ratio ensures that the pie chart is a circle
+    plt.show()
+
+
 # Uncomment the task(s) below that you want to run
 #task1()
 #task2()
@@ -86,3 +103,4 @@ def task8():
 #task6()
 #task7()
 #task8()
+#task9()
